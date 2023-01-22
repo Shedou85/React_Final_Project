@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "Avatar",
+        "description": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+        "year": 2009,
+        "duration": 162,
+        "genre": "Action, Adventure, Fantasy",
+        "rating": 7.8,
+        "director": "James Cameron",
+        "actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+        "image": "https://image.tmdb.org/t/p/w500/6u1fYtxG5eqjhtCPDx04pJphQRW.jpg",
+        "trailer": "https://www.youtube.com/watch?v=5PSNL1qE6VY"
+    },
+    {
+        "id": 2,
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+        "year": 2001,
+        "duration": 178,
+        "genre": "Adventure, Drama, Fantasy",
+        "rating": 8.8,
+        "director": "Peter Jackson",
+        "actors": "Alan Howard, Noel Appleby, Sean Astin, Sala Baker",
+        "image": "https://image.tmdb.org/t/p/w500/5VqpozZPcNc5KlUqW3oHmYQw2mK.jpg",
+        "trailer": "https://www.youtube.com/watch?v=V75dMMIW2B4"
+    }
+ 
+]
