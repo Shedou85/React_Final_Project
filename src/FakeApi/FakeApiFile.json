@@ -1,29 +1,69 @@
-[
-    {
-        "id": 1,
-        "title": "Avatar",
-        "description": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-        "year": 2009,
-        "duration": 162,
-        "genre": "Action, Adventure, Fantasy",
-        "rating": 7.8,
-        "director": "James Cameron",
-        "actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-        "image": "https://image.tmdb.org/t/p/w500/6u1fYtxG5eqjhtCPDx04pJphQRW.jpg",
-        "trailer": "https://www.youtube.com/watch?v=5PSNL1qE6VY"
-    },
-    {
-        "id": 2,
-        "title": "The Lord of the Rings: The Fellowship of the Ring",
-        "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
-        "year": 2001,
-        "duration": 178,
-        "genre": "Adventure, Drama, Fantasy",
-        "rating": 8.8,
-        "director": "Peter Jackson",
-        "actors": "Alan Howard, Noel Appleby, Sean Astin, Sala Baker",
-        "image": "https://image.tmdb.org/t/p/w500/5VqpozZPcNc5KlUqW3oHmYQw2mK.jpg",
-        "trailer": "https://www.youtube.com/watch?v=V75dMMIW2B4"
-    }
- 
-]
+{
+    "movies": [
+        {
+            "id": 1,
+            "title": "Avatar",
+            "description": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+            "year": 2009,
+            "duration": 162,
+            "genre": "Action, Adventure, Fantasy",
+            "rating": 7.8,
+            "director": "James Cameron",
+            "actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Avatar_%282009_film%29_poster.jpg/220px-Avatar_%282009_film%29_poster.jpg",
+            "trailer": "https://www.youtube.com/watch?v=5PSNL1qE6VY"
+        },
+        {
+            "id": 2,
+            "title": "The Lord of the Rings: The Fellowship of the Ring",
+            "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+            "year": 2001,
+            "duration": 178,
+            "genre": "Adventure, Drama, Fantasy",
+            "rating": 8.8,
+            "director": "Peter Jackson",
+            "actors": "Alan Howard, Noel Appleby, Sean Astin, Sala Baker",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Avatar_%282009_film%29_poster.jpg/220px-Avatar_%282009_film%29_poster.jpg",
+            "trailer": "https://www.youtube.com/watch?v=V75dMMIW2B4"
+        },
+        {
+            "id": 3,
+            "title": "Top Gun",
+            "description": "As students at the United States Navy's elite fighter weapons school compete to be best in the class, one daring young pilot learns a few things from a civilian instructor that are not taught in the classroom.",
+            "year": 1986,
+            "duration": 110,
+            "genre": "Action, Drama, Romance",
+            "rating": 6.9,
+            "director": "Tony Scott",
+            "actors": "Tom Cruise, Tim Robbins, Kelly McGillis, Val Kilmer",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Avatar_%282009_film%29_poster.jpg/220px-Avatar_%282009_film%29_poster.jpg",
+            "trailer": "https://www.youtube.com/watch?v=qAfbp3YX9F0"
+        },
+        {
+            "id": 4,
+            "title": "Spider-Man",
+            "description": "After being bitten by a genetically altered spider, nerdy high school student Peter Parker is endowed with amazing powers to become the Amazing",
+            "year": 2002,
+            "duration": 121,
+            "genre": "Action, Adventure, Fantasy",
+            "rating": 7.3,
+            "director": "Sam Raimi",
+            "actors": "Tobey Maguire, Kirsten Dunst, Willem Dafoe, James Franco",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Avatar_%282009_film%29_poster.jpg/220px-Avatar_%282009_film%29_poster.jpg",
+            "trailer": "https://www.youtube.com/watch?v=O7zvehDxttM"
+        },
+        {
+            "id": 5,
+            "title": "Batman Begins",
+            "description": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from corruption.",
+            "year": 2005,
+            "duration": 140,
+            "genre": "Action, Adventure",
+            "rating": 7.5,
+            "director": "Christopher Nolan",
+            "actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Avatar_%282009_film%29_poster.jpg/220px-Avatar_%282009_film%29_poster.jpg",
+            "trailer": "https://www.youtube.com/watch?v=neY2xVmOfUM"
+        }
+    ]
+}

@@ -3,11 +3,31 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 const movieDefaultState = {
-   movies: [],
+   movies: {},
 };
 
 
+const saveState = (state) => {
+   try {
+      const serializedState = JSON.stringify(state);
+      localStorage.setItem('state', serializedState);
+   } catch (err) {
+      console.log(err);
+   }
+};
+const loadState = (state) => {
+   try {
+      const serializedState = localStorage.getItem('state');
+      if (serializedState === null) {
+         return undefined;
+      }
+      return JSON.parse(serializedState);
+   } catch (err) {
+      return undefined;
+   }
+};
 
+const oldState = loadState();
 
 const FETCH_MOVIES = 'FETCH_MOVIES';
 const ADD_MOVIE = 'ADD_MOVIE';
@@ -38,7 +58,11 @@ const movieReducer = (state = movieDefaultState, action) => {
          return state;
    }
 }
-export const store = createStore(movieReducer, composeWithDevTools(applyMiddleware(thunk)));
+export const store = createStore(movieReducer, oldState, composeWithDevTools(applyMiddleware(thunk)));
+
+store.subscribe(() => {
+   saveState(store.getState());
+});
 
 export const fetchAllMoviesActionCenter = (payload) => {
    return {type: FETCH_MOVIES, payload};

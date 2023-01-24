@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchAllMovies} from '../FakeApi/movie';
-import { useEffect } from 'react';
+import { fetchAllMovies} from '../FakeApi/MovieGetApi';
+
 
 
 
@@ -12,25 +12,36 @@ const Movies = () => {
   const movies = useSelector(state => state.movies);
 
   useEffect(() => {
-    dispatch(fetchAllMovies(movies));
-  }, [dispatch]);
- console.log(movies.record); 
- // pomogi pozhalusto, ne mogu dostuchatsa do movies title i vse ostalnoe...
-// jesli pishu movies.record.title  idet undefined 
-  
-  //const moviesList = movies.map((movie,idx) => {
-  //  return  (
-  //    <div key={idx}>
-  //      <h1>{movie.title}</h1>
-  //      <p>{movie.description}</p>
-  //    </div>
-  //  )
-  //});
+    dispatch(fetchAllMovies());
+  }, [ dispatch ]);
+  console.log(movies);
 
+  const moviesList = movies.map((movie, idx) => {
+    return (
+          
+        <div className='movie-card' key={idx}>
+          <div className='movie-card-item' >
+            <div className='movie-card-img'>
+            <img src={movie.imageURL} alt={movie.title} />
+            </div>
+            {/*<div className='movie-card-title'>
+              <h3>{movie.title}</h3>
+            </div>*/}
+            <div className='descriptions'>
+              <h1>{movie.title}</h1>
+              <p>{movie.description}</p>
+              <button>Play trailer on YouTube</button>
+            </div>
+          </div>
+        </div>
+        
+      
+    )
+  })
+  
   return (
-    <div>
-      Movies
-     {/*{moviesList}*/}
+    <div className='movie-cards-wrapper'>
+      {moviesList}
     </div>
   )
 }

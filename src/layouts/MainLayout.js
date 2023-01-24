@@ -5,7 +5,7 @@ import { NavLink, Link, Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
    return (
-      <div className='wrapper'>
+      <div>
          <header>
             <div className='header-item'>
                <div className='logo'>Logo</div>
@@ -16,33 +16,37 @@ const MainLayout = () => {
                </nav>
             </div>
          </header>
-
-         <main>
-            <div className='aside-menu'>
-               <aside>
-               <ul>
-                  <li>
-                     <Link to="/movies">All</Link>
-                  </li>
-                  <li>
-                     <Link to="/action">Action</Link>
-                  </li>
-                  <li>
-                     <Link to="/movies?category=comedy">Comedy</Link>
-                  </li>
-                  <li>
-                     <Link to="/movies?category=thriller">Thriller</Link>
-                  </li>
-               </ul>
-            </aside>
-            </div>
+         <div className='wrapper'>
+            <div className='aside'>
+                  <aside>
+                  <ul>
+                     <li>
+                        <Link to="/movies">All</Link>
+                     </li>
+                     <li>
+                        <Link to="/action">Action</Link>
+                     </li>
+                     <li>
+                        <Link to="/">Comedy</Link>
+                     </li>
+                     <li>
+                        <Link to="/">Thriller</Link>
+                     </li>
+                  </ul>
+               </aside>
+               </div>
+            <main>
+            
             <div className='outlet'>
                <Outlet />
             </div>
          
             
 
-         </main>
+            </main>
+         </div>
+      
+         
          <footer>
             <p>Footer</p>
          </footer>
