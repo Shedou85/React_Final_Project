@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchAllMovies} from '../FakeApi/MovieGetApi';
 import { Link } from 'react-router-dom';
+import { fetchAllMovies } from '../FakeApi/MovieGetApi';
 
 
 
@@ -15,9 +15,9 @@ const Movies = () => {
   useEffect(() => {
     dispatch(fetchAllMovies());
   }, [ dispatch ]);
-  console.log(movies);
+  //console.log(movies.movies[0].title);
 
-  const moviesList = movies.map((movie, idx) => {
+  const moviesList = movies.movies.map((movie, idx) => {
     return (
         <div className='movie-card' key={idx}>
           <div className='movie-card-item' >

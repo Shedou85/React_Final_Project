@@ -1,68 +1,68 @@
-
- const moviesDefaultStates = {
-   movies: [],
-   isPending: false,
-   error: null,
+ const movieDefaultState = {
+   movies: {},
 };
 
-const FETCH_MOVIES_PENDING = 'FETCH_MOVIES_PENDING';
-const FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS';
-const FETCH_MOVIES_ERROR = 'FETCH_MOVIES_ERROR';
+export const saveState = (state) => {
+   try {
+      const serializedState = JSON.stringify(state);
+      localStorage.setItem('state', serializedState);
+   } catch (err) {
+      console.log("error saving state");
+   }
+};
+
+export const loadState = () => {
+   try {
+      const serializedState = localStorage.getItem('state');
+      if (serializedState === null) {
+         return undefined;
+      }
+      return JSON.parse(serializedState);
+   } catch (err) {
+      return undefined;
+   }
+};
+export const oldState = loadState();
+
+
+const FETCH_MOVIES = 'FETCH_MOVIES';
 const ADD_MOVIE = 'ADD_MOVIE';
 const DELETE_MOVIE = 'DELETE_MOVIE';
 const UPDATE_MOVIE = 'UPDATE_MOVIE';
 
-export const moviesReducer = (state = moviesDefaultStates, action) => {
+export const movieReducer = (state = movieDefaultState, action) => {
    switch (action.type) {
-      case FETCH_MOVIES_PENDING:
+      case FETCH_MOVIES:
          return {
             ...state,
-            isPending: true,
-         };
-      case FETCH_MOVIES_SUCCESS:
-         return {
-            ...state,
-            isPending: false,
             movies: action.payload,
-         };
-      case FETCH_MOVIES_ERROR:
-         return {
-            ...state,
-            isPending: false,
-            error: action.payload,
          };
       case ADD_MOVIE:
          return {
             ...state,
-            movies: [...state.movies, action.payload],
+            movies: [...state.movies, action.payload]
          };
       case DELETE_MOVIE:
          return {
             ...state,
-            movies: state.movies.filter(movie => movie.id !== action.payload),
+            movies: state.movies.filter((movie) => movie.id !== action.payload)
          };
       case UPDATE_MOVIE:
          return {
-            ...state,
-            movies: state.movies.map(movie => movie.id === action.payload.id ? action.payload : movie),
          };
       default:
          return state;
    }
-};
+}
+
 
 export const fetchAllMoviesActionCenter = (payload) => {
-   return {type: FETCH_MOVIES_PENDING, payload};
+   return {type: FETCH_MOVIES, payload};
 };
 export const deleteMovieActionCenter = (payload) => {
    return {type: DELETE_MOVIE, payload};
 };
-export const fetchAllMoviesSuccess = (payload) => {
-   return {type: FETCH_MOVIES_SUCCESS, payload};
+export const updateMovieActionCenter = (payload) => {
+   return {type: UPDATE_MOVIE, payload};
 };
-export const getMovies = state => state.moviesDataList;
-export const getMoviesPending = state => state.isPending;
-
-
-
 
