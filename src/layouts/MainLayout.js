@@ -1,18 +1,20 @@
 import React from 'react';
 import { NavLink, Link, Outlet } from 'react-router-dom';
+import { useState } from 'react';
 
 
 
-const MainLayout = () => {
+const MainLayout = () => {   
    return (
       <div>
          <header>
             <div className='header-item'>
-               <div className='logo'>Logo</div>
+               <div className='logo'>MD Coding</div>
                <nav>
-                  <NavLink to="/" className="active">Home</NavLink>
-                  <NavLink to="/movies" className="active">Movies</NavLink>
-                  <NavLink to="/contacts" className="active">Contacts</NavLink>
+                  <NavLink to="/" className="isActive">Home</NavLink>
+                  <NavLink to="/movies" className="isActive">Movies</NavLink>
+                  <NavLink to="/contacts" className="isActive">Contacts</NavLink>
+                  <NavLink to="/login" className="isActive">Login</NavLink>
                </nav>
             </div>
          </header>
@@ -20,6 +22,7 @@ const MainLayout = () => {
             <div className='aside'>
                   <aside>
                   <ul>
+                     <p>Categorys:</p>
                      <li>
                         <Link to="/movies">All</Link>
                      </li>
@@ -48,7 +51,7 @@ const MainLayout = () => {
       
          
          <footer>
-            <p>Footer</p>
+            <p>Web App Was Created By Marius @2023</p>
          </footer>
 
       </div>

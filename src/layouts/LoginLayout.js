@@ -1,8 +1,13 @@
 import React from 'react'
+import Login from '../pages/Login'
 
 const LoginLayout = () => {
   return (
-    <div>LoginLayout</div>
+    <div>
+      LoginLayout
+      <Login />
+    </div>
+    
   )
 }
 

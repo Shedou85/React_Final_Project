@@ -11,7 +11,6 @@ export const fetchAllMovies = () => {
             'X-Master-Key': '63cd389cace6f33a22c56c40',
          },
          credentials: 'omit',
-         //get the image url from the jsonbin.io
       }) 
          .then(response =>  response.json())
          .then(json =>  dispatch(fetchAllMoviesActionCenter(json.record.moviesData)));

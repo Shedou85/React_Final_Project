@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Movies from './pages/Movies';
 import Movie from './pages/Movie';
 import Contacts from './pages/Contacts';
-//import LoginLayout from './layouts/LoginLayout';
+import LoginLayout from './layouts/LoginLayout';
 import MainLayout from './layouts/MainLayout';
 import Action from './pages/category/Action';
 
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="app">
      <Routes>
-        {/*<Route path="/login" element={<LoginLayout />} />*/}
+        <Route path="/login" element={<LoginLayout />} />
 
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />

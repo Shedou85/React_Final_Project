@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
+
 const movieDefaultState = {
    movies: {},
 };
@@ -15,7 +16,7 @@ const saveState = (state) => {
       console.log(err);
    }
 };
-const loadState = (state) => {
+const loadState = () => {
    try {
       const serializedState = localStorage.getItem('state');
       if (serializedState === null) {

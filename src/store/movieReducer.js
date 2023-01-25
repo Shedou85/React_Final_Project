@@ -1,4 +1,4 @@
-//create a movie reducer
+
  const moviesDefaultStates = {
    movies: [],
    isPending: false,
