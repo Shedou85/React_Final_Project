@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { fetchAllMovies } from '../FakeApi/MovieGetApi';
+import { fetchOneMovieActionCenter } from '../store/movieReducer';
+
 
 
 
@@ -9,6 +11,7 @@ import { fetchAllMovies } from '../FakeApi/MovieGetApi';
 
 const Movies = () => {
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const movies = useSelector(state => state.movies);
 
@@ -17,16 +20,21 @@ const Movies = () => {
   }, [ dispatch ]);
   //console.log(movies.movies[0].title);
 
+  function moviePage(movies) {
+    dispatch(fetchOneMovieActionCenter(movies))
+    navigate('/movies/:id')
+  }
+
+
   const moviesList = movies.movies.map((movie, idx) => {
     return (
         <div className='movie-card' key={idx}>
           <div className='movie-card-item' >
             <div className='movie-card-img' style={{backgroundImage: `url(${movie.imageURL})`}}>
-            {/*<img src={movie.imageURL} alt={movie.title} />*/}
             </div>
             <div className='descriptions'>
-              <div className='movie-title'>
-                <Link to={`/movies/${movie.id}`} className='movie-title'>{movie.title}</Link>
+              <div className='movie-title' onClick={() => {moviePage(movie)}} data-id={movie.idx}>
+                {movie.title}
               </div>
               <div className='movie-year'>
                 <p>( {movie.year} )</p>

@@ -1,5 +1,6 @@
  const movieDefaultState = {
    movies: {},
+   selectedMovie: {},
 };
 
 export const saveState = (state) => {
@@ -26,6 +27,7 @@ export const oldState = loadState();
 
 
 const FETCH_MOVIES = 'FETCH_MOVIES';
+const FETCH_ONE_MOVIE = 'FETCH_ONE_MOVIE';
 const ADD_MOVIE = 'ADD_MOVIE';
 const DELETE_MOVIE = 'DELETE_MOVIE';
 const UPDATE_MOVIE = 'UPDATE_MOVIE';
@@ -35,8 +37,14 @@ export const movieReducer = (state = movieDefaultState, action) => {
       case FETCH_MOVIES:
          return {
             ...state,
-            movies: action.payload,
+            movies: action.payload
          };
+         case FETCH_ONE_MOVIE:
+         return {
+            ...state,
+            selectedMovie: action.payload
+         };
+
       case ADD_MOVIE:
          return {
             ...state,
@@ -49,6 +57,12 @@ export const movieReducer = (state = movieDefaultState, action) => {
          };
       case UPDATE_MOVIE:
          return {
+            ...state, movies: state.movies.map((movie) => {
+               if (movie.id === action.payload.id) {
+                  return action.payload;
+               }
+               return movie;
+            })
          };
       default:
          return state;
@@ -58,6 +72,9 @@ export const movieReducer = (state = movieDefaultState, action) => {
 
 export const fetchAllMoviesActionCenter = (payload) => {
    return {type: FETCH_MOVIES, payload};
+};
+export const fetchOneMovieActionCenter = (payload) => {
+   return {type: FETCH_ONE_MOVIE, payload};
 };
 export const deleteMovieActionCenter = (payload) => {
    return {type: DELETE_MOVIE, payload};

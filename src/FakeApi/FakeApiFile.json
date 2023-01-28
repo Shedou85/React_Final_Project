@@ -11,7 +11,8 @@
             "director": "James Cameron",
             "actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
             "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Avatar_%282009_film%29_poster.jpg/220px-Avatar_%282009_film%29_poster.jpg",
-            "trailer": "https://www.youtube.com/watch?v=5PSNL1qE6VY"
+            "trailer": "https://www.youtube.com/watch?v=5PSNL1qE6VY",
+            "movieURL": "https://api.getcodes.ws/embed/movie/267"
         },
         {
             "id": 2,

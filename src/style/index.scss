@@ -53,8 +53,108 @@ body {
 .content-wrapper {
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   align-items: center;
+   padding: 10px;
+   .page-header {
+      margin-bottom: 30px;
+
+      hr {
+         border: solid 0.2px var(--secondary-background);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-bottom: 20px;
+      }
+
+      .page-title {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-bottom: 20px;
+      }
+   }
+
+   .btn-back {
+      max-width: 110px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--secondary-background);
+      border-radius: 10px;
+      color: var(--text);
+      padding: 10px 20px 10px 20px;
+      cursor: pointer;
+      &:hover {
+         background-color: var(--card-bg);
+      }
+   }
+   .movie-card {
+      width: 900px;
+      background-color: var(--card-bg);
+      border: solid 1px var(--border);
+      border-radius: 10px;
+      color: white;
+      overflow: hidden;
+      margin-bottom: 30px;
+
+      .movie-card-item {
+         display: flex;
+      }
+      .movie-card-img {
+         width: 250px;
+         height: 260px;
+         overflow: hidden;
+         padding: 10px;
+         
+      }
+      .descriptions {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         padding: 10px;
+
+         .movie-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+         }
+         
+         .movie-year {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+         }
+      }
+
+      .card-btn {
+         max-width: 190px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background-color: var(--background);
+         color: var(--text);
+         padding: 10px 20px 10px 20px;
+         cursor: pointer;
+      }
+      
+   }
+   .movie-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .movie-player {
+         margin-bottom: 30px;
+      }
+      .comments-container {
+         border: solid 1px var(--card-bg);
+         width: 500px;
+         height: 300px;
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+      }
+   }
+
 }
 .outlet {
    background-color: var(--background);
@@ -106,16 +206,7 @@ main {
    display: flex;
    flex: 7;
 
-   .btn-back {
-      background-color: var(--secondary-background);
-      border-radius: 10px;
-      color: var(--text);
-      padding: 10px 20px 10px 20px;
-      cursor: pointer;
-      &:hover {
-         background-color: var(--card-bg);
-      }
-   }
+   
 }
 .aside {
    display: flex;
@@ -132,7 +223,7 @@ main {
    padding: 20px;
    width: 100%;
 
-   //create a movie card component
+   
    .movie-card {
       width: 200px;
       background-color: var(--card-bg);
@@ -165,6 +256,7 @@ main {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 10px;
+            cursor: pointer;
 
             &:hover {
                color: var(--secondary-tex);
