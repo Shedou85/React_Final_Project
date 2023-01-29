@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import Coments from '../components/Coments';
 
 
 
 const Movie = () => {
  
   const selectedMovie = useSelector(state => state.movies.selectedMovie);
-  console.log(selectedMovie);
+  
   
 
  
@@ -65,15 +66,17 @@ const Movie = () => {
        <div className='movie-container'>
         <div className='movie-player'>
           <iframe src={selectedMovie.movieURL} 
-          allowfullscreen="true" 
+          allowFullScreen={false} 
           webkitallowfullscreen="true"
           mozallowfullscreen="true"
           width="700" height="393" 
-          frameborder="0">
+          frameBorder="0"
+          title='frame' >
           </iframe>
         </div>
         <div className='comments-container'>
           Comments will be here
+          <Coments />
         </div>
        </div>
 

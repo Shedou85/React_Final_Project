@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fetchAllMovies } from '../FakeApi/MovieGetApi';
 import { fetchOneMovieActionCenter } from '../store/movieReducer';
 
@@ -18,7 +18,7 @@ const Movies = () => {
   useEffect(() => {
     dispatch(fetchAllMovies());
   }, [ dispatch ]);
-  //console.log(movies.movies[0].title);
+  console.log(movies);
 
   function moviePage(movies) {
     dispatch(fetchOneMovieActionCenter(movies))

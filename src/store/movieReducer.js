@@ -1,6 +1,7 @@
  const movieDefaultState = {
    movies: {},
-   selectedMovie: {},
+   selectedMovie: [],
+   newComment: []
 };
 
 export const saveState = (state) => {
@@ -31,6 +32,7 @@ const FETCH_ONE_MOVIE = 'FETCH_ONE_MOVIE';
 const ADD_MOVIE = 'ADD_MOVIE';
 const DELETE_MOVIE = 'DELETE_MOVIE';
 const UPDATE_MOVIE = 'UPDATE_MOVIE';
+const ADD_COMMENT = 'ADD_COMMENT';
 
 export const movieReducer = (state = movieDefaultState, action) => {
    switch (action.type) {
@@ -64,6 +66,10 @@ export const movieReducer = (state = movieDefaultState, action) => {
                return movie;
             })
          };
+      case ADD_COMMENT:
+         return {
+            ...state, newComment: [...state.newComment, action.payload]
+         };
       default:
          return state;
    }
@@ -81,5 +87,8 @@ export const deleteMovieActionCenter = (payload) => {
 };
 export const updateMovieActionCenter = (payload) => {
    return {type: UPDATE_MOVIE, payload};
+};
+export const addCommentActionCenter = (payload) => {
+   return {type: ADD_COMMENT, payload};
 };
 

@@ -1,5 +1,5 @@
 {
-    "movies": [
+    "moviesDataBase": [
         {
             "id": 1,
             "title": "Avatar",
