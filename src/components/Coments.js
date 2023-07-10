@@ -29,7 +29,7 @@ const Coments = () => {
                   <p>User Name :{selectedMovie.comments.testname}</p>
                </div>
                <div className='comment-card-comment'>
-                  <p>Comment : {selectedMovie.comments.testcomment}</p>
+                  // <p>Comment : {selectedMovie.comments.testcomment}</p>
                </div>
                
 
